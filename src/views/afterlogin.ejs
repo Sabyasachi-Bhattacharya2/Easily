@@ -1,0 +1,37 @@
+<h1 style="margin-top: 2%; color: #b700ff;"><span id="style-header"></span> </h1>
+<%if(afterlogin) {%>
+    <a href="/listofapplicant"><button class="btn btn-success btn-lg btn-block">Find Applicants</button></a>
+    <a href="/createjob"><button class="btn btn-success btn-lg btn-block">Create Job</button></a>
+<%}%>
+
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; text-align: center; min-height: 1rem; margin-top: 3%;">
+    
+    <%if(jobs) {%>
+        <% jobs.forEach(job => {%>
+            
+            <div class="card text-center"
+                style="width: 13.5rem; height: 16rem; display: flex; flex-direction: column; justify-content: flex-end;">
+                
+                <div class="card-body" style="margin-bottom: 0.2rem; display: flex; flex-direction: column; justify-content: flex-end;">
+                    <div class="card-header">
+                        <h4><%=job.companyname%></h4>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <p class="card-text">
+                            <%=job.role%>
+                        </p>
+                        <p class="card-text">
+                            <%=job.salary%>
+                        </p>
+                    </div>
+                    <%if(afterlogin) {%>
+                        <a href="/createnewjobs"><button class="btn btn-success btn-lg btn-block" style="margin-top: auto;" type="submit">Edit</button></a>
+                    <%} else {%>
+                        <a href="/applyjob?companyname=<%=job.companyname%>"><button class="btn btn-success btn-lg btn-block" style="margin-top: auto;" type="submit">Apply</button></a>
+                        
+                    <%}%>
+                </div>
+            </div>
+        <%})%>
+    <%}%>
+</div>

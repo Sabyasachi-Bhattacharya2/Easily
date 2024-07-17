@@ -1,0 +1,21 @@
+<h1 class="mt-5 mb-4">Apply for the job</h1>
+
+<form action="/applyjob" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        
+        <input type="hidden" class="form-control" id="name" name="companyname" value="<%=companyname%>"required>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="email" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="password" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="resume" class="form-label">Resume</label>
+        <input type="file" class="form-control" id="password" name="resume" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Apply</button>
+</form>

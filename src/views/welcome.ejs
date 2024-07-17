@@ -1,0 +1,49 @@
+
+<h1 style="margin-top: 2%; color: #b700ff;"><span id = "style-header"></span> </h1>
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; text-align: center; min-height: 1rem; margin-top: 3%;">
+    <div class="card text-center" style="width: 18rem; height: 20rem; display: flex; flex-direction: column; justify-content: flex-end">
+        <img class="card-img-top" height="70%" src="https://img.freepik.com/free-vector/man-search-hiring-job-online-from-laptop_1150-52728.jpg?t=st=1719142502~exp=1719146102~hmac=7c43d5dc1ff64d7a14be4169bc4ecf7763f430df1341e62ea6e12a0af318ed8c&w=1060" alt="Card image cap">
+        <div class="card-body" style= "margin-bottom: 0.2rem;">
+            <p class="card-text">Lets go for a quick Job Search</p>
+            <a href="/newjobs"><button class="btn btn-primary" type="submit">Find Jobs</button></a>
+        </div>
+    </div>
+
+    <div class="card text-center" style="width: 18rem; height: 20rem; display: flex; flex-direction: column; justify-content: flex-end;">
+        <img class="card-img-top" height="70%"
+            src="https://images.pexels.com/photos/3760069/pexels-photo-3760069.jpeg"
+            alt="Card image cap">
+        <div class="card-body" style="margin-bottom: 0.2rem;">
+            <p class="card-text">Find the Right Talent</p>
+            <a href="/register"><button class="btn btn-success" type="submit">Find Talent</button></a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById('style-header');
+        const textContent = "Welcome to the Ultimate Destination for skyrocketing your career";
+        for (let index = 0; index < textContent.length; index++) {
+            const spanElement = document.createElement('span');
+            spanElement.textContent = textContent[index];
+            spanElement.style.transition = 'opacity 2s ease '+(0.05*index)+'s' ;
+            spanElement.style.color = getRandomColor();
+            spanElement.style.opacity = '0';
+            header.appendChild(spanElement);
+            setTimeout(() => {
+                spanElement.style.opacity = '1';
+            }, 1);
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let index = 0; index < 6; index++) {
+                const number = Math.floor(Math.random() * 16);
+                color += letters[number];
+            }
+
+            return color;
+        }
+    });
+</script>

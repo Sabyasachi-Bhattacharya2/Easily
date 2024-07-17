@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Job Listings</h1>
+    <div class="row">
+        <% applicants.forEach(applicant=> { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= applicant.name %>
+                        </h5>
+                        <p class="card-text">Email <%= applicant.email %></p>
+                        <a class="btn btn-primary" href="<%= application.resume.path.replace(/\\/g, '/')%>">Resume</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</div>
